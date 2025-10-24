@@ -1,0 +1,7 @@
+product_id,product_name,price,category,stock
+101,Laptop,999.99,Electronics,50
+102,Mouse,25.50,Electronics,200
+103,Keyboard,75.00,Electronics,150
+104,Monitor,299.99,Electronics,80
+105,Desk Chair,199.99,Furniture,40
+106,Desk Lamp,45.00,Furniture,100
