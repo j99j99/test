@@ -10,7 +10,6 @@ import csv
 import os
 import tempfile
 import shutil
-from pathlib import Path
 import sys
 
 # Add parent directory to path to import csv_import module
@@ -218,7 +217,7 @@ class TestTransactionHandling(unittest.TestCase):
             
             # Simulate the proper transaction handling
             try:
-                conn.execute('BEGIN TRANSACTION')
+                conn.execute('BEGIN')
                 cursor.execute('CREATE TABLE test (id INTEGER)')
                 cursor.execute('INSERT INTO test VALUES (1)')
                 conn.commit()
@@ -242,7 +241,7 @@ class TestTransactionHandling(unittest.TestCase):
             conn.commit()
             
             try:
-                conn.execute('BEGIN TRANSACTION')
+                conn.execute('BEGIN')
                 cursor.execute('INSERT INTO test VALUES (2)')
                 cursor.execute('INSERT INTO test VALUES (1)')  # This will fail
                 conn.commit()
